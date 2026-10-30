@@ -3,7 +3,8 @@
 CREATE OR REPLACE TABLE stg_stops AS
 SELECT
     id                                   AS stop_id,
-    train_line_ride_id                   AS ride_id,
+    regexp_replace(id, '-[0-9]+$', '')   AS journey_id,   -- one train run on one day
+    train_line_ride_id                   AS ride_id,      -- same for every run of a line pattern
     train_line_station_num               AS stop_seq,
     eva                                  AS station_id,
     station_name,
@@ -18,6 +19,7 @@ SELECT
     arrival_change_time                  AS actual_arrival,
     delay_in_min,
     arrival_is_canceled                  AS is_cancelled,
+    is_additional_stop,
     date_trunc('month', arrival_planned_time)::DATE AS month,
     hour(arrival_planned_time)           AS hour_of_day,
     dayname(arrival_planned_time)        AS weekday

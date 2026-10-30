@@ -11,4 +11,10 @@ One definition per metric, so every chart and table uses the same numbers.
 
 **Segments:** long distance = ICE, IC, EC. Regional = all other rail. Buses are excluded.
 
-**Grain:** one row per train per stop (`stg_stops`).
+**Grain:** one row per train per stop (`stg_stops`). One journey (one train run on one day) = `journey_id`.
+
+**Journey types** (long distance):
+- *Ran fully* — no stop cancelled.
+- *Cut short* — every stop after a certain point cancelled (e.g. turned back early).
+- *Skipped stops mid-route* — some stops cancelled, later stops still served.
+- *Fully cancelled* — every stop cancelled.

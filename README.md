@@ -6,7 +6,7 @@ An analysis of Deutsche Bahn punctuality across Germany over 12 months (Oct 2025
 
 ## Questions
 1. Can the raw data reproduce DB's official monthly punctuality? If not, why not?
-2. How much worse is punctuality once cancelled trains are counted ("honest punctuality")?
+2. How much worse is punctuality once cancelled trains are counted ("honest punctuality")? Are late trains cut short more often, which removes their stops from the official figure?
 3. Which stations, lines and hours lose the most time?
 4. Where along an ICE route does delay build up?
 5. What predicts a late arrival? (logistic regression)
